@@ -27,6 +27,17 @@ class frac1 : Fragment() {
     fun addContadorListener(c:ContadorListener){
         this.contadorListener=c;
     }
+    override fun onViewCreated(view: View,savedInstanceState: Bundle?){
+        val txtview1=view.findViewById<TextView>(R.id.txt1)
+        //definimos el valor actual en el fracmento1
+        txtview1.setText(contadorListener!!.getValorActual().toString())
+        val BtnContar= view.findViewById<Button>(R.id.boton_incrementar);
+        BtnContar.setOnClickListener {
+            contadorListener!!.incrementar();
+            txtview1.setText(contadorListener!!.getValorActual().toString())
+
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,18 +57,8 @@ class frac1 : Fragment() {
 
 
 
+//edit
 
-    override fun onViewCreated(view: View,savedInstanceState: Bundle?){
-        val txtview1=view.findViewById<TextView>(R.id.txt1)
-        //definimos el valor actual en el fracmento1
-        txtview1.setText(contadorListener!!.getValorActual().toString())
-        val BtnContar= view.findViewById<Button>(R.id.boton_incrementar);
-        BtnContar.setOnClickListener {
-            contadorListener!!.incrementar();
-            txtview1.setText(contadorListener!!.getValorActual().toString())
-
-        }
-    }
 
     companion object {
         /**

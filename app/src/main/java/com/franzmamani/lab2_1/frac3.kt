@@ -22,6 +22,7 @@ class frac3 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
     var contadorListener:ContadorListener?=null
     fun addListener2(c:ContadorListener){
         this.contadorListener=c;
